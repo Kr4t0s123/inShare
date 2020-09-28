@@ -15,7 +15,7 @@ const Popup = document.querySelector('.msg')
 const emailButton = document.querySelector('#email-button')
 
 
-const host = "http://localhost:3000"
+const host = process.env.APP_BASE_URL
 const uplaodURL = `${host}/api/files`
 const emailURL = `${host}/api/files/send`
 const maxAllowedSize = 1024 * 1024 * 100;
