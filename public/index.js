@@ -15,14 +15,14 @@ const Popup = document.querySelector('.msg')
 const emailButton = document.querySelector('#email-button')
 
 
-const host = "https://inshare-sr.herokuapp.com"
+const host = "http://localhost:3000"
 const uplaodURL = `${host}/api/files`
 const emailURL = `${host}/api/files/send`
 const maxAllowedSize = 1024 * 1024 * 100;
 
 dropzone.addEventListener('dragover'  , (e)=>{
     e.preventDefault()
-    console.log('dragging ')
+   
     if(!dropzone.classList.contains('dragged'))
     {
         dropzone.classList.add('dragged')
@@ -38,7 +38,7 @@ dropzone.addEventListener('drop'  , (e)=>{
     e.preventDefault()
     dropzone.classList.remove('dragged')
     const files = e.dataTransfer.files
-    console.table(files)
+    
     if(files.length)
     {
         fileinput.files = files
@@ -86,7 +86,7 @@ const uploadfile =()=>{
     xhr.send(formdata)
     xhr.onreadystatechange = () =>{
        if(xhr.readyState === XMLHttpRequest.DONE){
-           console.log(JSON.parse(xhr.response))
+           
             showLink(JSON.parse(xhr.response))
        }
     }
