@@ -81,7 +81,8 @@ const uploadfile =()=>{
     progressContainer.style.display = 'block'
     const formdata = new FormData()
     formdata.append('myfile' , files)
-
+    console.log(files)
+    console.log(formdata)
     const xhr = new XMLHttpRequest()
     xhr.onreadystatechange =()=>{
        if(xhr.readyState === XMLHttpRequest.DONE){
