@@ -11,7 +11,10 @@ const downloadLinks = require('./routes/downloadLink')
 
 //cors
 const cors = require('cors')
-app.use(cors())
+const Corsoptions = {
+    origin :process.env.ALLOWED_CLIENTS.split(',')
+}
+app.use(cors(Corsoptions))
 
 app.use(express.static('public'))
 app.use(express.json())

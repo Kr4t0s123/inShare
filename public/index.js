@@ -79,14 +79,13 @@ const uploadfile =()=>{
         return;
     }
     progressContainer.style.display = 'block'
-    const formdata = new FormData()
+    let formdata = new FormData()
     formdata.append('myfile' , files)
-    console.log(files)
-    console.log(formdata)
     const xhr = new XMLHttpRequest()
-    xhr.onreadystatechange =()=>{
+    xhr.open("POST" , uplaodURL);
+    xhr.send(formdata)
+    xhr.onreadystatechange = () =>{
        if(xhr.readyState === XMLHttpRequest.DONE){
-           console.log(xhr.response)
            console.log(JSON.parse(xhr.response))
             showLink(JSON.parse(xhr.response))
        }
@@ -98,8 +97,7 @@ const uploadfile =()=>{
         showToast(`Error in upload : ${xhr.statusText}`)
     }
    
-    xhr.open("POST" , uplaodURL , true);
-    xhr.send(formdata)
+    
 }
 
 const updateProgress =(e)=>{
