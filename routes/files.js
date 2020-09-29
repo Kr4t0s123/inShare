@@ -23,7 +23,7 @@ router.post('/' ,async (req, res)=>{
 
     
     upload(req, res, async (err)=>{
-
+      
       if(!req.file)
       {
         return res.json({ error : "All fields are required"})

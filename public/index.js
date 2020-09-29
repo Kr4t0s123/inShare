@@ -15,7 +15,7 @@ const Popup = document.querySelector('.msg')
 const emailButton = document.querySelector('#email-button')
 
 
-const host = "https://sr-inshare.herokuapp.com"
+const host = "http://localhost:3000"
 const uplaodURL = `${host}/api/files`
 const emailURL = `${host}/api/files/send`
 const maxAllowedSize = 1024 * 1024 * 100;
@@ -86,6 +86,7 @@ const uploadfile =()=>{
     xhr.onreadystatechange =()=>{
        if(xhr.readyState === XMLHttpRequest.DONE){
            console.log(xhr.response)
+           console.log(JSON.parse(xhr.response))
             showLink(JSON.parse(xhr.response))
        }
     }
