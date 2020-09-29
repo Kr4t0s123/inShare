@@ -15,7 +15,7 @@ const Popup = document.querySelector('.msg')
 const emailButton = document.querySelector('#email-button')
 
 
-const host = process.env.APP_BASE_URL
+const host = "https://sr-inshare.herokuapp.com/"
 const uplaodURL = `${host}/api/files`
 const emailURL = `${host}/api/files/send`
 const maxAllowedSize = 1024 * 1024 * 100;
