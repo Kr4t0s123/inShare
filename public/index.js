@@ -97,7 +97,7 @@ const uploadfile =()=>{
         showToast(`Error in upload : ${xhr.statusText}`)
     }
    
-    xhr.open("POST" , uplaodURL);
+    xhr.open("POST" , uplaodURL , true);
     xhr.send(formdata)
 }
 
